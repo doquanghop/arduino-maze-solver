@@ -1,4 +1,4 @@
-#include "ObstacleAvoidance.h"
+#include "obstacle_avoidance.h"
 
 ObstacleAvoidance::ObstacleAvoidance(MotorControl* m, ObstacleSensor* s) {
     // TODO: Khởi tạo các đối tượng

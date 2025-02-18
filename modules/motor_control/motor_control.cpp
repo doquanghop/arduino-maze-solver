@@ -1,4 +1,4 @@
-#include "MotorControl.h"
+#include "motor_control.h"
 
 MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int sp2) {
     // TODO: Khởi tạo chân động cơ
