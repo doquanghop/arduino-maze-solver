@@ -6,6 +6,7 @@ MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int 
 
 void MotorControl::moveForward(int speed) {
     // TODO: Hàm điều khiển tiến
+    //mẹ thằng hợp
 }
 
 void MotorControl::moveBackward(int speed) {
