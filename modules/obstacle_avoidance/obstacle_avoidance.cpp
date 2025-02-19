@@ -5,5 +5,5 @@ ObstacleAvoidance::ObstacleAvoidance(MotorControl* m, ObstacleSensor* s) {
 }
 
 void ObstacleAvoidance::checkAndAvoid() {
-     // TODO: Kiểm tra khoảng cách và thực hiện hành động tránh vật cản nếu cần
+     // TODO: Kiểm tra khoảng cách và thực hiện hành động tránh vật cản nếu cầnnnnn
 }
