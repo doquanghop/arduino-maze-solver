@@ -1,8 +1,8 @@
 #ifndef OBSTACLE_AVOIDANCE_H
 #define OBSTACLE_AVOIDANCE_H
 
-#include "motor_control/MotorControl.h"
-#include "obstacle_sensor/ObstacleSensor.h"
+#include "modules/motor_control/MotorControl.h"
+#include "modules/obstacle_sensor/ObstacleSensor.h"
 
 class ObstacleAvoidance {
 public:
