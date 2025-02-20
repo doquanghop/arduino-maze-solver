@@ -19,7 +19,7 @@ Dự án Robot Mê Cung sử dụng vi điều khiển Arduino để lập trìn
 1. Cài đặt [Arduino IDE](https://www.arduino.cc/en/software).
 2. Clone dự án:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/dqh999/arduino-maze-solver
    ```
 3. Mở file Main.ino và biên dịch code trên Arduino IDE.
 4. Kết nối phần cứng và tải chương trình lên Arduino.
