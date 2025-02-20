@@ -21,7 +21,7 @@ Dự án Robot Mê Cung sử dụng vi điều khiển Arduino để lập trìn
    ```bash
    git clone <repository_url>
    ```
-3. Mở project và biên dịch code trên Arduino IDE.
+3. Mở file Main.ino và biên dịch code trên Arduino IDE.
 4. Kết nối phần cứng và tải chương trình lên Arduino.
 
 
