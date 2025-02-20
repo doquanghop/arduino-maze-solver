@@ -9,9 +9,6 @@ void ObstacleAvoidance::checkAndAvoid() {
     int distanceFront = sensor->getDistance();
     delay(50);
 
-    Serial.print("Khoảng cách phía trước: ");
-    Serial.println(distanceFront);
-
     if (distanceFront > 150) {
           motor->moveForward(180);
     } else if (distanceFront >= 20) {
