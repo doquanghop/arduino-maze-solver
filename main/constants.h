@@ -14,4 +14,5 @@ const int MAX_DISTANCE = 200; // Khoảng cách tối đa cho cảm biến siêu
 const int MOTOR_SPEED_PIN1 = 6;  // ENA trên L298N
 const int MOTOR_SPEED_PIN2 = 5;  // ENB trên L298N
 
+
 #endif
