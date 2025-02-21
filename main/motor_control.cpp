@@ -25,11 +25,11 @@ MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int 
 void MotorControl::moveForward(int speed) {
     // TODO: Hàm điều khiển tiến
 
-    digitalWrite(motor1Pin1, HIGH);
+    digitalWrite(motor1Pin1, HIGH); //chân điểu khiển
     digitalWrite(motor1Pin2, LOW);
     digitalWrite(motor2Pin1, HIGH);
     digitalWrite(motor2Pin2, LOW);
-    analogWrite(motorSpeedPin1, speed);
+    analogWrite(motorSpeedPin1, speed); // cđiều khiển tín hiệu bằng PWM
     analogWrite(motorSpeedPin2, speed);  
 
 
@@ -46,23 +46,32 @@ void MotorControl::moveBackward(int speed) {
     analogWrite(motorSpeedPin2, speed);
 }
 
-void MotorControl::moveLeft(int speed) {
+void MotorControl::turnLeft(int speed) {
   // Hàm điều khiển rẽ trái
-    
-    analogWrite(motorSpeedPin1, 0);  // dừng bánh trái
+    digitalWrite(motor1Pin1, LOW);
+    digitalWrite(motor1Pin2, HIGH);
+    digitalWrite(motor2Pin1, HIGH);
+    digitalWrite(motor2Pin2, LOW);
+    analogWrite(motorSpeedPin1, speed/2);  // dừng bánh trái
     analogWrite(motorSpeedPin2, speed);
 }
 
-void MotorControl::moveRight(int speed) {
+void MotorControl::turnRight(int speed) {
   // Hàm điều khiển rẽ phải
-    
-    analogWrite(motorSpeedPin1, speed);  // dừng bánh phải
-    analogWrite(motorSpeedPin2, 0);
+    digitalWrite(motor1Pin1,HIGH);
+    digitalWrite(motor1Pin2, LOW);
+    digitalWrite(motor2Pin1, LOW);
+    digitalWrite(motor2Pin2, HIGH);
+    analogWrite(motorSpeedPin1, speed);  
+    analogWrite(motorSpeedPin2, speed/2);
 }
 
-void MotorControl::stop() {
+void MotorControl::moveStop() {
   // hàm điều khiển dừng
   // dừng cả 2 bánh
-    moveForward(0)
-
+    digitalWrite(motor1Pin1, LOW); //chân điểu khiển
+    digitalWrite(motor1Pin2, LOW);
+    digitalWrite(motor2Pin1, LOW);
+    digitalWrite(motor2Pin2, LOW);
+      
 }
