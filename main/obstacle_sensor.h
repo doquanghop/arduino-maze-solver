@@ -8,7 +8,7 @@ class ObstacleSensor {
 public:
     ObstacleSensor(int trigPin, int echoPin, int maxDistance);
     int getDistance();
-
+    
 private:
     int trigPin, echoPin, maxDistance;
     NewPing sonar;
