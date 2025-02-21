@@ -2,7 +2,7 @@
 
 MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int sp2) {
     // TODO: Khởi tạo chân động cơ
-
+    
     // Gán giá trị chân điều khiển
     this->motor1Pin1 = m1p1;
     this->motor1Pin2 = m1p2;
@@ -24,6 +24,7 @@ MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int 
 
 void MotorControl::moveForward(int speed) {
     // TODO: Hàm điều khiển tiến
+    speed = constrain(speed, 0, 255);
 
     digitalWrite(motor1Pin1, HIGH); //chân điểu khiển
     digitalWrite(motor1Pin2, LOW);
@@ -37,7 +38,7 @@ void MotorControl::moveForward(int speed) {
 
 void MotorControl::moveBackward(int speed) {
     // TODO: Hàm điều khiển lùi
-
+    speed = constrain(speed, 0, 255);
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, LOW);
@@ -48,6 +49,7 @@ void MotorControl::moveBackward(int speed) {
 
 void MotorControl::turnLeft(int speed) {
   // Hàm điều khiển rẽ trái
+    speed = constrain(speed, 0, 255);
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, HIGH);
@@ -58,6 +60,7 @@ void MotorControl::turnLeft(int speed) {
 
 void MotorControl::turnRight(int speed) {
   // Hàm điều khiển rẽ phải
+    speed = constrain(speed, 0, 255);
     digitalWrite(motor1Pin1,HIGH);
     digitalWrite(motor1Pin2, LOW);
     digitalWrite(motor2Pin1, LOW);
@@ -69,9 +72,12 @@ void MotorControl::turnRight(int speed) {
 void MotorControl::moveStop() {
   // hàm điều khiển dừng
   // dừng cả 2 bánh
+    
     digitalWrite(motor1Pin1, LOW); //chân điểu khiển
     digitalWrite(motor1Pin2, LOW);
     digitalWrite(motor2Pin1, LOW);
     digitalWrite(motor2Pin2, LOW);
+    analogWrite(motorSpeedPin1, 0);  
+    analogWrite(motorSpeedPin2, 0);
       
 }
