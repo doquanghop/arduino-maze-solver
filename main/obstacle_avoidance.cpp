@@ -40,5 +40,6 @@ void ObstacleAvoidance::checkAndAvoid() {
           motor->moveBackward(120);
           delay(1000);
           motor->moveStop();
-        }
+    }
 }
+
