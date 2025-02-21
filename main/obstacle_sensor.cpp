@@ -1,10 +1,7 @@
 #include "obstacle_sensor.h"
 
-ObstacleSensor::ObstacleSensor(int trig, int echo, int maxDist) : sonar(trig, echo, maxDist) {
-    // TODO: Khởi tạo cảm biến
-    this->trigPin = trig;
-    this->echoPin = echo;
-    this->maxDistance = maxDist;
+ObstacleSensor::ObstacleSensor(int trig, int echo, int maxDist)
+    : trigPin(trig), echoPin(echo), maxDistance(maxDist), sonar(trig, echo, maxDist) {
 }
 
 int ObstacleSensor::getDistance() {
