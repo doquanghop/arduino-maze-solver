@@ -26,12 +26,15 @@ void MotorControl::moveForward(int speed) {
     // TODO: Hàm điều khiển tiến
     speed = constrain(speed, 0, 255);
 
-    digitalWrite(motor1Pin1, HIGH); //chân điểu khiển
-    digitalWrite(motor1Pin2, LOW);
-    digitalWrite(motor2Pin1, HIGH);
-    digitalWrite(motor2Pin2, LOW);
-    analogWrite(motorSpeedPin1, speed); // cđiều khiển tín hiệu bằng PWM
-    analogWrite(motorSpeedPin2, speed);  
+    if (!goesForward) {
+        goesForward = true;
+        digitalWrite(motor1Pin1, HIGH);
+        digitalWrite(motor1Pin2, LOW);
+        digitalWrite(motor2Pin1, HIGH);
+        digitalWrite(motor2Pin2, LOW);
+        analogWrite(motorSpeedPin1, speed); // cđiều khiển tín hiệu bằng PWM
+        analogWrite(motorSpeedPin2, speed);
+    }  
 
 
 }
@@ -39,6 +42,7 @@ void MotorControl::moveForward(int speed) {
 void MotorControl::moveBackward(int speed) {
     // TODO: Hàm điều khiển lùi
     speed = constrain(speed, 0, 255);
+    goesForward = false;
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, LOW);
