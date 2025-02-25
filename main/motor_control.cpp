@@ -79,24 +79,32 @@ void MotorControl::moveStop() {
 
 void MotorControl::turnLeft(int speed) {
   // Hàm điều khiển rẽ trái
-    speed = constrain(speed, 0, 255);
+    moveStop();
+    delay(100); 
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, HIGH);
     digitalWrite(motor2Pin2, LOW);
+    speed = constrain(speed, 0, 255);
     analogWrite(motorSpeedPin1, speed/2);  // dừng bánh trái
     analogWrite(motorSpeedPin2, speed);
+    delay(600);
+    moveStop();
 }
 
 void MotorControl::turnRight(int speed) {
   // Hàm điều khiển rẽ phải
-    speed = constrain(speed, 0, 255);
+    moveStop();
+    delay(100); 
     digitalWrite(motor1Pin1,HIGH);
     digitalWrite(motor1Pin2, LOW);
     digitalWrite(motor2Pin1, LOW);
     digitalWrite(motor2Pin2, HIGH);
+    speed = constrain(speed, 0, 255);
     analogWrite(motorSpeedPin1, speed);  
     analogWrite(motorSpeedPin2, speed/2);
+    delay(600);
+    moveStop();
 }
 
 void MotorControl::moveStop() {
@@ -110,4 +118,23 @@ void MotorControl::moveStop() {
     analogWrite(motorSpeedPin1, 0);  
     analogWrite(motorSpeedPin2, 0);
       
+}
+
+void MotorControl::rotate180(int speed) {
+    moveStop();
+    delay(100); 
+
+    // Quay phải 180 độ
+    digitalWrite(motor1Pin1, HIGH);
+    digitalWrite(motor1Pin2, LOW);
+    digitalWrite(motor2Pin1, LOW);
+    digitalWrite(motor2Pin2, HIGH);
+
+    speed = constrain(speed, 0, 255);
+    analogWrite(motorSpeedPin1, speed);
+    analogWrite(motorSpeedPin2, speed);
+
+    delay(1000);  
+
+    moveStop();  
 }

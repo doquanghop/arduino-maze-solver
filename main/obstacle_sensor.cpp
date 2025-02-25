@@ -5,6 +5,12 @@ ObstacleSensor::ObstacleSensor(int trig, int echo, int maxDist)
 }
 
 int ObstacleSensor::getDistance() {
-    // TODO: Đọc khoảng cách từ cảm biến siêu âm
-    return sonar.ping_cm(); 
+    int sum = 0;
+    for (int i = 0; i < 3; i++) {
+        int d = sonar.ping_cm();
+        if (d == 0) d = maxDistance;
+        sum += d;
+        delay(30); 
+    }
+    return sum / 3;
 }
