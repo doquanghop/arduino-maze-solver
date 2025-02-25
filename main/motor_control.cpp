@@ -1,6 +1,17 @@
 #include "motor_control.h"
 
 MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int sp2) {
+<<<<<<< HEAD
+  motor1Pin1 = m1p1; motor1Pin2 = m1p2, motor2Pin1 = m2p1, motor2Pin2 = m2p2;
+  motorSpeedPin1 = sp1, motorSpeedPin2 = sp2;
+}
+
+void MotorControl::moveForward() {
+  digitalWrite(m1p1, HIGH);
+  digitalWrite(m1p2, HIGH);
+  digitalWrite(m2p1, LOW);
+  digitalWrite(m2p2, LOW); 
+=======
     // TODO: Khởi tạo chân động cơ
     
     // Gán giá trị chân điều khiển
@@ -26,19 +37,38 @@ void MotorControl::moveForward(int speed) {
     // TODO: Hàm điều khiển tiến
     speed = constrain(speed, 0, 255);
 
-    digitalWrite(motor1Pin1, HIGH); //chân điểu khiển
-    digitalWrite(motor1Pin2, LOW);
-    digitalWrite(motor2Pin1, HIGH);
-    digitalWrite(motor2Pin2, LOW);
-    analogWrite(motorSpeedPin1, speed); // cđiều khiển tín hiệu bằng PWM
-    analogWrite(motorSpeedPin2, speed);  
+    if (!goesForward) {
+        goesForward = true;
+        digitalWrite(motor1Pin1, HIGH);
+        digitalWrite(motor1Pin2, LOW);
+        digitalWrite(motor2Pin1, HIGH);
+        digitalWrite(motor2Pin2, LOW);
+        analogWrite(motorSpeedPin1, speed); // cđiều khiển tín hiệu bằng PWM
+        analogWrite(motorSpeedPin2, speed);
+    }  
 
 
+>>>>>>> 27e9da0c3e14a908a594e5258256746106bae135
 }
 
-void MotorControl::moveBackward(int speed) {
+void MotorControl::moveBackward() {
+  digitalWrite(LeftMotorBackward, HIGH);
+  digitalWrite(RightMotorBackward, HIGH);
+  
+  digitalWrite(LeftMotorForward, LOW);
+  digitalWrite(RightMotorForward, LOW);
+}
+
+void MotorControl::moveLeft() {
+    // TODO: Hàm điều khiển lùi
+}
+void MotorControl::moveRight() {
+    // TODO: Hàm điều khiển lùi
+}
+void MotorControl::moveStop() {
     // TODO: Hàm điều khiển lùi
     speed = constrain(speed, 0, 255);
+    goesForward = false;
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, LOW);
