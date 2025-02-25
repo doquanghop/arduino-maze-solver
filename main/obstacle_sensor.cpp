@@ -2,6 +2,8 @@
 
 ObstacleSensor::ObstacleSensor(int trig, int echo, int maxDist)
     : trigPin(trig), echoPin(echo), maxDistance(maxDist), sonar(trig, echo, maxDist) {
+    // pinMode(trigPin, OUTPUT);
+    // pinMode(echoPin, INPUT);
 }
 
 int ObstacleSensor::getDistance() {
