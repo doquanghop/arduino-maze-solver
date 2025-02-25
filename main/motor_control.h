@@ -11,7 +11,7 @@ public:
     void moveStop();
     void turnLeft(int speed);
     void turnRight(int speed);
-
+    void rotate180(int speed);
 
 private:
     int motor1Pin1, motor1Pin2, motor2Pin1, motor2Pin2;
