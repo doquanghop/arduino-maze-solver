@@ -9,7 +9,7 @@ Dự án Robot Mê Cung sử dụng vi điều khiển Arduino để lập trìn
 - **Cảm biến siêu âm HC-SR04** - Dùng để phát hiện chướng ngại vật.
 
 ## Thành Viên Tham Gia
-- [**Đỗ Quang Hợp**](https://github.com/dqh999)
+- [**Đỗ Quang Hợp**](https://github.com/doquanghop)
 - [**Nguyễn Thu Hương**](https://github.com/nguyenthuhuong)
 - [**Nguyễn Việt Anh**](https://github.com/DevxVAnh)
 - [**Đỗ Công Trí**](https://github.com/docongtri)
