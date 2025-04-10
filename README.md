@@ -23,34 +23,37 @@ Dự án **Robot Mê Cung** là một hệ thống robot tự động được p
 
 ---
 
+## Cấu trúc dự án
+```
+arduino-maze-solver/
+├── idea/                    # Thư mục chứa file cấu hình của IntelliJ IDEA (nếu dùng IDE này)
+├── src/                     # Thư mục chứa mã nguồn chính
+│   ├── constants.h          # File chứa các hằng số (constants) của dự án
+│   ├── line_sensor.cpp      # File nguồn cho cảm biến dò đường (line sensor)
+│   ├── line_sensor.h        # File header cho cảm biến dò đường
+│   ├── main.ino             # File chính của Arduino, chứa hàm setup() và loop()
+│   ├── motor_control.cpp    # File nguồn cho class điều khiển động cơ
+│   ├── motor_control.h      # File header cho class điều khiển động cơ
+│   ├── obstacle_sensor.cpp  # File nguồn cho cảm biến phát hiện chướng ngại vật (HC-SR04)
+│   ├── obstacle_sensor.h    # File header cho cảm biến phát hiện chướng ngại vật
+│   ├── robot_line.cpp       # File nguồn cho logic điều khiển robot dò đường
+│   ├── robot_line.h         # File header cho logic điều khiển robot dò đường
+│   ├── robot_scan.cpp       # File nguồn cho logic quét và điều hướng mê cung
+│   ├── robot_scan.h         # File header cho logic quét và điều hướng mê cung
+├── data/                    # Thư mục chứa dữ liệu 
+│   ├── map.txt              # File chứa bản đồ mê cung (nếu dùng)
+│   ├── routes.txt           # File chứa các tuyến đường đã quét (nếu dùng)
+├── pathfinder_algo.cpp.cpp  # File nguồn cho thuật toán tìm đường tối ưu
+├── README.md                # File mô tả dự án (file này)
+```
+---
+
 ## Thành viên tham gia 👥
 - [**Đỗ Quang Hợp**](https://github.com/doquanghop)
 - [**Nguyễn Thu Hương**](https://github.com/nguyenthuhuong)
 - [**Nguyễn Việt Anh**](https://github.com/DevxVAnh)
 - [**Đỗ Công Trí**](https://github.com/docongtri)
 - [**Nguyễn Hồng Lịch**](https://github.com/Cry-0) 
-
----
-
-## Hướng dẫn cài đặt ⚙️
-### Yêu cầu trước
-- [Arduino IDE](https://www.arduino.cc/en/software) đã được cài đặt.
-- Các thư viện cần thiết: `NewPing` (cho HC-SR04).
-
-### Các bước thực hiện
-1. **Clone dự án**  
-   ```bash
-   git clone https://github.com/dqh999/arduino-maze-solver.git
-   ```
-2. **Mở mã nguồn**  
-   - Mở file `Main.ino` trong Arduino IDE.  
-3. **Cài đặt thư viện**  
-   - Vào `Sketch > Include Library > Manage Libraries`, tìm và cài đặt `NewPing`.  
-4. **Kết nối phần cứng**  
-   - Lắp ráp linh kiện theo sơ đồ (xem phần **Sơ đồ mạch** bên dưới).  
-   - Kết nối Arduino với máy tính qua cáp USB.  
-5. **Tải code lên Arduino**  
-   - Nhấn `Upload` trong Arduino IDE để nạp chương trình.
 
 ---
 
@@ -84,24 +87,8 @@ Dự án được phát hành dưới [MIT License](LICENSE). Xem file `LICENSE`
 
 ## Liên hệ 📧
 Nếu bạn có câu hỏi hoặc cần hỗ trợ, hãy liên hệ qua:  
-- Email: example@email.com  
+- Email: dqhdev.q@email.com  
 - Issues: [GitHub Issues](https://github.com/dqh999/arduino-maze-solver/issues)
 
 ---
 
-⭐️ *Nếu bạn thấy dự án hữu ích, hãy để lại một ngôi sao trên GitHub!* ⭐️
-```
-
-### Hướng dẫn tải về:
-1. **Sao chép nội dung**: Copy toàn bộ đoạn mã trên.
-2. **Tạo file `README.md`**:
-   - Mở một trình soạn thảo văn bản (như Notepad, VS Code, hoặc bất kỳ IDE nào).
-   - Dán nội dung vào và lưu với tên `README.md`.
-3. **Đẩy lên GitHub**:
-   - Đặt file này vào thư mục gốc của repository dự án (`arduino-maze-solver`).
-   - Commit và push file lên GitHub bằng lệnh:
-     ```bash
-     git add README.md
-     git commit -m "Thêm file README.md"
-     git push origin main
-     ```
