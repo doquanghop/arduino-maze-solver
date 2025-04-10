@@ -47,7 +47,7 @@ void MotorControl::turnLeft(int speed) {
     analogWrite(motorSpeedPin1, speed / 2);
     analogWrite(motorSpeedPin2, speed);
     delay(600);
-    moveStop();
+    // moveStop();
 }
 
 void MotorControl::turnRight(int speed) {
