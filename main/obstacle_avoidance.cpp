@@ -14,8 +14,8 @@ void ObstacleAvoidance::checkAndAvoid() {
     } else if (distanceFront >= 20) {
       motor->moveForward(150);
     } else {
-      // motor->moveStop();
-      // delay(300);
+      motor->moveStop();
+      delay(300);
 
       motor->moveBackward(120);
       delay(500);
