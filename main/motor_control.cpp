@@ -74,7 +74,7 @@ void MotorControl::moveStop() {
 }
 
 void MotorControl::rotate180(int speed) {
-  speed = constrain(speed, 0, 255);
+  // speed = constrain(speed, 0, 255);
     moveStop();
     delay(100);
     digitalWrite(motor1Pin1, HIGH);
