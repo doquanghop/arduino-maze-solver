@@ -27,7 +27,7 @@ void MotorControl::moveForward(int speed) {
 }
 
 void MotorControl::moveBackward(int speed) {
-  speed = constrain(speed, 0, 255);
+  // speed = constrain(speed, 0, 255);
     digitalWrite(motor1Pin1, LOW);
     digitalWrite(motor1Pin2, HIGH);
     digitalWrite(motor2Pin1, LOW);
