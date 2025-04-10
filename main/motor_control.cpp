@@ -17,7 +17,7 @@ MotorControl::MotorControl(int m1p1, int m1p2, int m2p1, int m2p2, int sp1, int 
 }
 
 void MotorControl::moveForward(int speed) {
-  speed = constrain(speed, 0, 255);
+  // speed = constrain(speed, 0, 255);
     digitalWrite(motor1Pin1, HIGH);
     digitalWrite(motor1Pin2, LOW);
     digitalWrite(motor2Pin1, HIGH);
@@ -47,7 +47,7 @@ void MotorControl::turnLeft(int speed) {
     analogWrite(motorSpeedPin1, speed / 2);
     analogWrite(motorSpeedPin2, speed);
     delay(600);
-    moveStop();
+    // moveStop();
 }
 
 void MotorControl::turnRight(int speed) {
